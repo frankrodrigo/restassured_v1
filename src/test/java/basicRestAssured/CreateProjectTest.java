@@ -34,7 +34,7 @@ public class CreateProjectTest {
         int idProj = response.then().extract().path("Id");
 
         body.put("Content","Bootcampupdate");
-        body.put("Icon",5);
+        body.put("Icon",3);
 
         response=given()
                     .auth()
@@ -50,7 +50,7 @@ public class CreateProjectTest {
         response.then()
                 .log().all()
                 .statusCode(200)
-                .body("Icon",equalTo(5))
+                .body("Icon",equalTo(3))
                 .body("Content",equalTo("Bootcampupdate"));
 
 
